@@ -1,0 +1,42 @@
+{{define "inicio"}}
+
+{{template "header"}}
+<div class="container">
+    <div class="col" style="padding: 5px;">
+        <a name="" id="" class="btn btn-primary" href="/crearEmpleado" role="button">Crear Nuevo Empleado</a>
+    </div>
+    <div class="col" style="padding: 5px;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tipo de documento</th>
+                    <th>Numero de documento</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Telefono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+               {{ range.}}
+                <tr>
+                    <td>{{.IdPropietario}} </td>
+                    <td>{{.TipoDocumento}}</td>
+                    <td>{{.Documento}}</td>
+                    <td>{{.Nombre}}</td>
+                    <td>{{.Apellido}}</td>
+                    <td>{{.Telefono}}</td>
+                    <td>
+                        <a name="" id="" class="btn btn-info" href="/editar?id={{.IdPropietario}}" role="button">Editar</a>
+                        <a name="" id="" class="btn btn-danger" href="/eliminar?id={{.IdPropietario}}" role="button">Eliminar</a>
+                    </td>
+                </tr>
+              {{end}}
+            </tbody>
+        </table>
+    </div>
+</div>
+{{template "footer"}}
+
+{{end}}
