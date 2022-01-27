@@ -23,7 +23,7 @@ func ConexionBD() (conexion *sql.DB) {
 
 func main() {
 	http.HandleFunc("/", Inicio)
-	http.HandleFunc("/crearEmpleado", FormEmpleado)
+	http.HandleFunc("/propietario", FormEmpleado)
 	http.HandleFunc("/guardarEmpleado", GuardarEmpleado)
 	http.HandleFunc("/editar", EditarEmpleado)
 	http.HandleFunc("/borrar", EliminarEmpleado)
@@ -73,7 +73,7 @@ func Inicio(response http.ResponseWriter, request *http.Request) {
 func FormEmpleado(response http.ResponseWriter, request *http.Request) {
 	empleado = Empleado{}
 	empleado.TipoDocumento = "Seleccione un tipo de documento"
-	templates.ExecuteTemplate(response, "crearEmpleado", empleado)
+	templates.ExecuteTemplate(response, "propietario", empleado)
 }
 
 func GuardarEmpleado(response http.ResponseWriter, request *http.Request) {
@@ -143,6 +143,6 @@ func EditarEmpleado(response http.ResponseWriter, request *http.Request) {
 
 	}
 
-	templates.ExecuteTemplate(response, "crearEmpleado", empleado)
+	templates.ExecuteTemplate(response, "propietario", empleado)
 
 }
