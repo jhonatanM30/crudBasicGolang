@@ -26,7 +26,7 @@ func main() {
 	http.HandleFunc("/crearEmpleado", FormEmpleado)
 	http.HandleFunc("/guardarEmpleado", GuardarEmpleado)
 	http.HandleFunc("/editar", EditarEmpleado)
-	http.HandleFunc("/eliminar", EliminarEmpleado)
+	http.HandleFunc("/borrar", EliminarEmpleado)
 	http.ListenAndServe(":8080", nil)
 }
 
